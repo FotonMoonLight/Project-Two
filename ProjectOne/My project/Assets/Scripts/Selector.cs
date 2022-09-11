@@ -7,7 +7,7 @@ public class Selector : MonoBehaviour
 {
     public void Selec()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("LevelSelector");
     }
     public void Exit()
     {
@@ -16,5 +16,17 @@ public class Selector : MonoBehaviour
     public void Return()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+    public void TrainingMod()
+    {
+        SceneManager.LoadScene("Game");
+    }
+    public void TwoDMod()
+    {
+        
+    }
+    public void ThreeMod()
+    {
+
     }
 }
