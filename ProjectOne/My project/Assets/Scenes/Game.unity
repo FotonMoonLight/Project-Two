@@ -1408,6 +1408,7 @@ GameObject:
   - component: {fileID: 2092359083}
   - component: {fileID: 2092359082}
   - component: {fileID: 2092359081}
+  - component: {fileID: 2092359084}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1481,6 +1482,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2092359084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092359080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfe2fb5725e37d438781cb9d131ce78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6223942289021096343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1545,6 +1558,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1760872631}
     - target: {fileID: 4244168887330080033, guid: 534a2cd148421604391855665f885b0b, type: 3}
+      propertyPath: _Speed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244168887330080033, guid: 534a2cd148421604391855665f885b0b, type: 3}
       propertyPath: buttons.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1556,6 +1573,10 @@ PrefabInstance:
       propertyPath: buttons.Array.data[1]
       value: 
       objectReference: {fileID: 1900488094}
+    - target: {fileID: 5858589421804324021, guid: 534a2cd148421604391855665f885b0b, type: 3}
+      propertyPath: knife
+      value: 
+      objectReference: {fileID: 5904486099956108719, guid: 1d50f17a085e46246b211dd09b0328a2, type: 3}
     - target: {fileID: 5858589421804324021, guid: 534a2cd148421604391855665f885b0b, type: 3}
       propertyPath: point
       value: 

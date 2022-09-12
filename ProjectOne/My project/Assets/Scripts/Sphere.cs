@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Sphere : MonoBehaviour
 {
     public GameObject[] buttons;
     public static bool _Mover = false;
     public GameObject Mover;
+    public int _HpTree;
+    public int _Speed;
     private bool corector = false;
+    private void Start()
+    {
+        _HpTree = Random.Range(5, 12);
+    }
 
-    // Update is called once per frame
+
     void FixedUpdate()
     {
-        transform.Rotate(Vector3.forward * 20f * Time.fixedDeltaTime);
+        SphereStats();
+        transform.Rotate(Vector3.forward * _Speed * Time.fixedDeltaTime);
         if(KnifeLogic._Restart == true)
         {
             for (int i = 0; i < buttons.Length; i++)
@@ -22,17 +30,17 @@ public class Sphere : MonoBehaviour
         }
         if (_Mover == true)
         {
-            if (Mover.transform.position.y <= 1.4f && corector == false)
+            if (Mover.transform.position.y <= 1.41f && corector == false)
             {
-               Mover.transform.Translate(Vector3.up * 1f * Time.fixedDeltaTime);
+               Mover.transform.Translate(Vector3.up * 0.5f * Time.fixedDeltaTime);
                 
             }
             if (Mover.transform.position.y >= 1.38 && corector == true)
             {
-                Mover.transform.Translate(Vector3.down * 1f * Time.fixedDeltaTime);
+                Mover.transform.Translate(Vector3.down * 0.5f * Time.fixedDeltaTime);
             }
 
-            if(Mover.transform.position.y > 1.4f)
+            if(Mover.transform.position.y > 1.41f)
             {
                 corector = true;
             }
@@ -42,6 +50,13 @@ public class Sphere : MonoBehaviour
                 corector = false;
             }
             
+        }
+    }
+    private void SphereStats()
+    {
+        if(_HpTree == 0)
+        {
+            SceneManager.LoadScene("Game");
         }
     }
 }

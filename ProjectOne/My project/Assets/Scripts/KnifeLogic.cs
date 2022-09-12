@@ -10,6 +10,7 @@ public class KnifeLogic : MonoBehaviour
     public static bool _Restart = false;
     public bool _HasMove = true;
     public bool _CanLose = false;
+    private bool _DamageTrue = false;
     [Header ("Настройки ножа")]
     public float speed = 7f;
 
@@ -20,6 +21,7 @@ public class KnifeLogic : MonoBehaviour
         {
             transform.Translate(Vector3.down * speed * Time.fixedDeltaTime);
         }
+        HpDamager();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -29,11 +31,21 @@ public class KnifeLogic : MonoBehaviour
             _HasMove = false;
             _CanLose = true;
             Sphere._Mover = true;
+            _DamageTrue = true;
         }
         if (other.gameObject.CompareTag("Knife") && _CanLose == true)
         {
             _Restart = true;
             knifeBut.SetActive(false);
+        }
+    }
+    private void HpDamager()
+    {
+        if (_DamageTrue == true)
+        {
+            sphere = GameObject.FindGameObjectWithTag("Sphere");
+            sphere.GetComponent<Sphere>()._HpTree -= 1;
+            _DamageTrue = false;
         }
     }
 }

@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 94c8c818a0ddcda4cbc0ea921752f09e, type: 2}
+  - {fileID: 2100000, guid: 672b7290660ce0d4db25e1b599a28e25, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,8 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphere: {fileID: 0}
+  knifeBut: {fileID: 0}
   _HasMove: 1
   _CanLose: 0
+  speed: 7
 --- !u!65 &1496830428726008766
 BoxCollider:
   m_ObjectHideFlags: 0
