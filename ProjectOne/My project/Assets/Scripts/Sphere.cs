@@ -56,7 +56,12 @@ public class Sphere : MonoBehaviour
     {
         if(_HpTree == 0)
         {
-            SceneManager.LoadScene("Game");
+            GameObject[] gm = GameObject.FindGameObjectsWithTag("Knife");
+            for(int i = 0; i < gm.Length; i++)
+            {
+                Destroy(gm[i]);
+            }
+            _HpTree = Random.Range(5, 12);
         }
     }
 }
