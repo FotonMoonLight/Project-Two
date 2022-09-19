@@ -6,19 +6,41 @@ using UnityEngine.SceneManagement;
 public class Sphere : MonoBehaviour
 {
     public GameObject[] buttons;
+    public GameObject[] points;
+    public GameObject apple;
     public static bool _Mover = false;
     public GameObject Mover;
+    public GameObject app;
     public int _HpTree;
     public int _Speed;
+    public int i;
+    public bool _AppleTrans = true;
     private bool corector = false;
     private void Start()
     {
         _HpTree = Random.Range(5, 12);
+        i = Random.Range(0, points.Length);
+        if(Random.Range(0,100) > 1)
+        {
+            
+            Instantiate(apple, points[i].transform.position, points[i].transform.rotation);
+            
+        }
     }
 
 
     void FixedUpdate()
     {
+        if(_AppleTrans == true)
+        {
+            app = GameObject.Find("Apple(Clone)");
+            app.transform.position = points[i].transform.position;
+            app.transform.rotation = points[i].transform.rotation;
+        }
+        else
+        {
+            Destroy(app);
+        }
         SphereStats();
         transform.Rotate(Vector3.forward * _Speed * Time.fixedDeltaTime);
         if(KnifeLogic._Restart == true)

@@ -38,6 +38,11 @@ public class KnifeLogic : MonoBehaviour
             _Restart = true;
             knifeBut.SetActive(false);
         }
+        if (other.gameObject.CompareTag("Apple"))
+        {
+            sphere = GameObject.FindGameObjectWithTag("Sphere");
+            sphere.GetComponent<Sphere>()._AppleTrans = false;
+        }
     }
     private void HpDamager()
     {
